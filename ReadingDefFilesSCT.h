@@ -1,11 +1,11 @@
-// Register.h
+// ReadingDefFilesSCT.h
 
-#ifndef REGISTER_H
-#define REGISTER_H
+#ifndef ReadingDefFilesSCT_H
+#define ReadingDefFilesSCT_H
 
 #include <string>
 
-class Register {
+class ReadingDefFilesSCT {
 public:
     // Enum for AccessMode
     enum AccessModeType {
@@ -16,10 +16,10 @@ public:
     };
 
     // Default constructor
-    Register();
+    ReadingDefFilesSCT();
 
     // Parameterized constructor
-    Register(std::string Name, uint8_t RegAddr, uint8_t nBits, uint8_t startBit, 
+    ReadingDefFilesSCT(std::string Name, uint8_t RegAddr, uint8_t nBits, uint8_t startBit, 
              uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
              uint32_t upperBound, float multiplier, float offset, std::string description);
 
@@ -39,4 +39,4 @@ private:
     std::string description;
 };
 
-#endif // REGISTER_H
+#endif // ReadingDefFilesSCT_H
