@@ -1,4 +1,4 @@
-#include "Register.h"
+#include "ReadingDefFilesSCT.h"
 
 // Default constructor implementation
 Register::Register() 
