@@ -58,3 +58,9 @@ void ReadingDefFilesSCT::setOffset(float offset) {
 void ReadingDefFilesSCT::setDescription(const std::string &desc) {
     description = desc;
 }
+
+// Destructor implementation
+ReadingDefFilesSCT::~ReadingDefFilesSCT() {
+    // Cleanup code (if necessary) would go here. 
+    // In this specific case, nothing specific needs to be done.
+}
