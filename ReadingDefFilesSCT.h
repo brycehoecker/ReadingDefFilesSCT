@@ -1,7 +1,7 @@
 // ReadingDefFilesSCT.h
 
-#ifndef ReadingDefFilesSCT_H
-#define ReadingDefFilesSCT_H
+#ifndef READINGDEFFILESSCT_H
+#define READINGDEFFILESSCT_H
 
 #include <string>
 
@@ -20,8 +20,8 @@ public:
 
     // Parameterized constructor
     ReadingDefFilesSCT(std::string Name, uint8_t RegAddr, uint8_t nBits, uint8_t startBit, 
-             uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
-             uint32_t upperBound, float multiplier, float offset, std::string description);
+                       uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
+                       uint32_t upperBound, float multiplier, float offset, std::string description);
 
     // Getter and setter methods declaration can go here
 
@@ -39,4 +39,5 @@ private:
     std::string description;
 };
 
-#endif // ReadingDefFilesSCT_H
+#endif // READINGDEFFILESSCT_H
+
