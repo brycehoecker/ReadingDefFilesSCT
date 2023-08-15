@@ -1,52 +1,17 @@
+#include "Register.h"
 
-#include <iostream>
-#include <string>
+// Default constructor implementation
+Register::Register() 
+    : RegAddr(0), nBits(0), startBit(0), value(0), AccessMode(MODE0), 
+      lowerBound(0), upperBound(0), multiplier(1.0f), offset(0.0f), description("") {}
 
-class Register {
-public:
-    // Enum for AccessMode
-    enum AccessModeType {
-        MODE0 = 0,
-        MODE1 = 1,
-        MODE2 = 2,
-        MODE3 = 3
-    };
+// Parameterized constructor implementation
+Register::Register(std::string Name, uint8_t RegAddr, uint8_t nBits, uint8_t startBit, 
+                   uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
+                   uint32_t upperBound, float multiplier, float offset, std::string description)
+    : Name(Name), RegAddr(RegAddr), nBits(nBits), startBit(startBit), value(value), 
+      AccessMode(AccessMode), lowerBound(lowerBound), upperBound(upperBound), 
+      multiplier(multiplier), offset(offset), description(description) {}
 
+// If you had getter and setter methods or any other member functions in the header, their implementations would also go here.
 
-private:
-    std::string Name;
-    uint8_t RegAddr;
-    uint8_t nBits;
-    uint8_t startBit;
-    uint32_t value;
-    AccessModeType AccessMode;
-    uint32_t lowerBound;
-    uint32_t upperBound;
-    float multiplier;
-    float offset;
-    std::string description;
-
-public:
-    // Constructors, getters, setters, and any other member functions can go here
-
-    // A default constructor for simplicity
-    Register() = default;
-
-    // Parameterized constructor
-    Register(std::string Name, uint8_t RegAddr, uint8_t nBits, uint8_t startBit, 
-             uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
-             uint32_t upperBound, float multiplier, float offset, std::string description)
-        : Name(Name), RegAddr(RegAddr), nBits(nBits), startBit(startBit), value(value), 
-          AccessMode(AccessMode), lowerBound(lowerBound), upperBound(upperBound), 
-          multiplier(multiplier), offset(offset), description(description) {}
-    
-    // Add getter and setter methods for each field if necessary
-};
-
-int main() {
-    // Test the class
-    Register reg("TestRegister", 0x01, 8, 0, 100, Register::MODE1, 0, 255, 1.5, 0.5, "This is a test register");
-    // Further processing and testing can be done here
-
-    return 0;
-}
