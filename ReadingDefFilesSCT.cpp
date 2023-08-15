@@ -1,4 +1,6 @@
 #include "ReadingDefFilesSCT.h"
+#include <fstream>
+#include <sstream>
 
 // Default constructor implementation
 ReadingDefFilesSCT::ReadingDefFilesSCT() 
@@ -110,4 +112,45 @@ std::string ReadingDefFilesSCT::getDescription() const {
     return description;
 }
 
+//Actual Function for Reading from .def file function
+bool ReadingDefFilesSCT::readFromFile(const std::string& filename) {
+    std::ifstream file(filename);
+
+    // Check if the file opened successfully
+    if (!file.is_open()) {
+        std::cerr << "Failed to open the file: " << filename << std::endl;
+        return false;
+    }
+
+    std::string line;
+
+    // Skip the first two header lines
+    std::getline(file, line);
+    std::getline(file, line);
+
+    // Read and parse the third line containing the actual data
+    if (std::getline(file, line)) {
+        std::istringstream ss(line);
+
+        ss >> name;
+
+        uint8_t regAddrTmp, nBitsTmp, startBitTmp;
+        ss >> std::hex >> regAddrTmp >> std::dec >> nBitsTmp >> startBitTmp >> value;
+
+        int modeTmp;
+        ss >> modeTmp;
+        accessMode = static_cast<AccessModeType>(modeTmp);
+
+        ss >> lowerBound >> upperBound >> multiplier >> offset;
+        std::getline(ss, description); // Get the rest of the line as the description
+
+        // Assign parsed values
+        RegAddr = regAddrTmp;
+        nBits = nBitsTmp;
+        startBit = startBitTmp;
+    }
+
+    file.close();
+    return true;
+}
 

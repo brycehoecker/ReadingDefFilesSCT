@@ -53,7 +53,7 @@ public:
     float getOffset() const;
     std::string getDescription() const;
 
-
+    bool readFromFile(const std::string& filename);
 
 private:
     std::string Name;
