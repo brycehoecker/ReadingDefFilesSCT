@@ -23,6 +23,9 @@ public:
                        uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
                        uint32_t upperBound, float multiplier, float offset, std::string description);
 
+    // Destructor declaration
+    ~ReadingDefFilesSCT();
+
     // Setter methods declaration
     void setName(const std::string &name);
     void setRegAddr(uint8_t regAddr);
