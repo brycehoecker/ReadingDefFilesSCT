@@ -13,5 +13,48 @@ ReadingDefFilesSCT::ReadingDefFilesSCT(std::string Name, uint8_t RegAddr, uint8_
       AccessMode(AccessMode), lowerBound(lowerBound), upperBound(upperBound), 
       multiplier(multiplier), offset(offset), description(description) {}
 
-// If you had getter and setter methods or any other member functions in the header, their implementations would also go here.
+// Setter methods implementation
 
+void ReadingDefFilesSCT::setName(const std::string &name) {
+    Name = name;
+}
+
+void ReadingDefFilesSCT::setRegAddr(uint8_t regAddr) {
+    RegAddr = regAddr;
+}
+
+void ReadingDefFilesSCT::setNBits(uint8_t nBits) {
+    this->nBits = nBits;
+}
+
+void ReadingDefFilesSCT::setStartBit(uint8_t startBit) {
+    this->startBit = startBit;
+}
+
+void ReadingDefFilesSCT::setValue(uint32_t value) {
+    this->value = value;
+}
+
+void ReadingDefFilesSCT::setAccessMode(AccessModeType accessMode) {
+    AccessMode = accessMode;
+}
+
+void ReadingDefFilesSCT::setLowerBound(uint32_t lowerBound) {
+    this->lowerBound = lowerBound;
+}
+
+void ReadingDefFilesSCT::setUpperBound(uint32_t upperBound) {
+    this->upperBound = upperBound;
+}
+
+void ReadingDefFilesSCT::setMultiplier(float multiplier) {
+    this->multiplier = multiplier;
+}
+
+void ReadingDefFilesSCT::setOffset(float offset) {
+    this->offset = offset;
+}
+
+void ReadingDefFilesSCT::setDescription(const std::string &desc) {
+    description = desc;
+}
