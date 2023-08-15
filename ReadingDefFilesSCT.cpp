@@ -7,8 +7,8 @@ ReadingDefFilesSCT::ReadingDefFilesSCT()
 
 // Parameterized constructor implementation
 ReadingDefFilesSCT::ReadingDefFilesSCT(std::string Name, uint8_t RegAddr, uint8_t nBits, uint8_t startBit, 
-                   uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
-                   uint32_t upperBound, float multiplier, float offset, std::string description)
+                                       uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
+                                       uint32_t upperBound, float multiplier, float offset, std::string description)
     : Name(Name), RegAddr(RegAddr), nBits(nBits), startBit(startBit), value(value), 
       AccessMode(AccessMode), lowerBound(lowerBound), upperBound(upperBound), 
       multiplier(multiplier), offset(offset), description(description) {}
