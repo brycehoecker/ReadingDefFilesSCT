@@ -23,7 +23,22 @@ public:
                        uint32_t value, AccessModeType AccessMode, uint32_t lowerBound, 
                        uint32_t upperBound, float multiplier, float offset, std::string description);
 
-    // Getter and setter methods declaration can go here
+    // Setter methods declaration
+    void setName(const std::string &name);
+    void setRegAddr(uint8_t regAddr);
+    void setNBits(uint8_t nBits);
+    void setStartBit(uint8_t startBit);
+    void setValue(uint32_t value);
+    void setAccessMode(AccessModeType accessMode);
+    void setLowerBound(uint32_t lowerBound);
+    void setUpperBound(uint32_t upperBound);
+    void setMultiplier(float multiplier);
+    void setOffset(float offset);
+    void setDescription(const std::string &desc);
+
+
+
+
 
 private:
     std::string Name;
