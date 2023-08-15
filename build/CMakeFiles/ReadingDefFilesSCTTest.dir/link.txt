@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/ReadingDefFilesSCTTest.dir/main.cpp.o CMakeFiles/ReadingDefFilesSCTTest.dir/ReadingDefFilesSCT.cpp.o -o ReadingDefFilesSCTTest 

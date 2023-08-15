@@ -1,16 +1,29 @@
 #include <iostream>
 #include "ReadingDefFilesSCT.h"
+using namespace std;
 
 int main() {
-    // Create an object of ReadingDefFilesSCT using the parameterized constructor
-    ReadingDefFilesSCT reading("TestName", 0x01, 8, 0, 100, ReadingDefFilesSCT::MODE1, 
-                               0, 255, 1.5f, 0.5f, "This is a test description");
+    const int numObjects = 1000;
 
-    // Assuming you have a getter method for Name in your class, you can use it like:
-    // std::cout << "Name: " << reading.getName() << std::endl;
+    // Create an array of pointers to ReadingDefFilesSCT objects
+    ReadingDefFilesSCT* readings[numObjects];
 
-    // For this example, without getter methods, we're just printing a statement to indicate success.
-    std::cout << "ReadingDefFilesSCT object created successfully!" << std::endl;
+    // Create 1000 ReadingDefFilesSCT objects using the parameterized constructor
+    for (int i = 0; i < numObjects; ++i) {
+        readings[i] = new ReadingDefFilesSCT("TestName" + to_string(i), 0x01, 8, 0, 100, 
+                                             ReadingDefFilesSCT::MODE1, 0, 255, 1.5f, 0.5f, 
+                                             "Description for object " + to_string(i));
+    }
+
+    cout << "1000 ReadingDefFilesSCT objects created successfully!" << endl;
+
+    // Delete the 1000 ReadingDefFilesSCT objects
+    for (int i = 0; i < numObjects; ++i) {
+        delete readings[i];
+    }
+
+    cout << "1000 ReadingDefFilesSCT objects deleted successfully!" << endl;
 
     return 0;
 }
+

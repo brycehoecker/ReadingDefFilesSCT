@@ -1,0 +1,3 @@
+/home/psctdev/vscode_folder/ReadingDefFilesSCT/build/CMakeFiles/rebuild_cache.dir
+/home/psctdev/vscode_folder/ReadingDefFilesSCT/build/CMakeFiles/edit_cache.dir
+/home/psctdev/vscode_folder/ReadingDefFilesSCT/build/CMakeFiles/ReadingDefFilesSCTTest.dir
