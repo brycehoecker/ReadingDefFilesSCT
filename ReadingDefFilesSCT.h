@@ -40,6 +40,18 @@ public:
     void setDescription(const std::string &desc);
 
 
+    // Getter methods declaration
+    std::string getName() const;
+    uint8_t getRegAddr() const;
+    uint8_t getNBits() const;
+    uint8_t getStartBit() const;
+    uint32_t getValue() const;
+    AccessModeType getAccessMode() const;
+    uint32_t getLowerBound() const;
+    uint32_t getUpperBound() const;
+    float getMultiplier() const;
+    float getOffset() const;
+    std::string getDescription() const;
 
 
 
