@@ -13,8 +13,13 @@ ReadingDefFilesSCT::ReadingDefFilesSCT(std::string Name, uint8_t RegAddr, uint8_
       AccessMode(AccessMode), lowerBound(lowerBound), upperBound(upperBound), 
       multiplier(multiplier), offset(offset), description(description) {}
 
-// Setter methods implementation
+// Destructor implementation
+ReadingDefFilesSCT::~ReadingDefFilesSCT() {
+    // Cleanup code (if necessary) would go here. 
+    // In this specific case, nothing specific needs to be done.
+}
 
+// Setter methods implementation
 void ReadingDefFilesSCT::setName(const std::string &name) {
     Name = name;
 }
@@ -59,8 +64,50 @@ void ReadingDefFilesSCT::setDescription(const std::string &desc) {
     description = desc;
 }
 
-// Destructor implementation
-ReadingDefFilesSCT::~ReadingDefFilesSCT() {
-    // Cleanup code (if necessary) would go here. 
-    // In this specific case, nothing specific needs to be done.
+
+// Getter methods implementation
+std::string ReadingDefFilesSCT::getName() const {
+    return Name;
 }
+
+uint8_t ReadingDefFilesSCT::getRegAddr() const {
+    return RegAddr;
+}
+
+uint8_t ReadingDefFilesSCT::getNBits() const {
+    return nBits;
+}
+
+uint8_t ReadingDefFilesSCT::getStartBit() const {
+    return startBit;
+}
+
+uint32_t ReadingDefFilesSCT::getValue() const {
+    return value;
+}
+
+ReadingDefFilesSCT::AccessModeType ReadingDefFilesSCT::getAccessMode() const {
+    return AccessMode;
+}
+
+uint32_t ReadingDefFilesSCT::getLowerBound() const {
+    return lowerBound;
+}
+
+uint32_t ReadingDefFilesSCT::getUpperBound() const {
+    return upperBound;
+}
+
+float ReadingDefFilesSCT::getMultiplier() const {
+    return multiplier;
+}
+
+float ReadingDefFilesSCT::getOffset() const {
+    return offset;
+}
+
+std::string ReadingDefFilesSCT::getDescription() const {
+    return description;
+}
+
+
