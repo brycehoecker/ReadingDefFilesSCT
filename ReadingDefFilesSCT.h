@@ -27,12 +27,12 @@ public:
     ~ReadingDefFilesSCT();
 
     // Setter methods declaration
-    void setName(const std::string &name);
-    void setRegAddr(uint8_t regAddr);
+    void setName(const std::string &Name);
+    void setRegAddr(uint8_t RegAddr);
     void setNBits(uint8_t nBits);
     void setStartBit(uint8_t startBit);
     void setValue(uint32_t value);
-    void setAccessMode(AccessModeType accessMode);
+    void setAccessMode(AccessModeType AccessMode);
     void setLowerBound(uint32_t lowerBound);
     void setUpperBound(uint32_t upperBound);
     void setMultiplier(float multiplier);

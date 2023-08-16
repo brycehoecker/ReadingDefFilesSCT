@@ -9,7 +9,7 @@ int main() {
     ReadingDefFilesSCT* readings[numObjects];
     
     ReadingDefFilesSCT reading;
-    if (reading.readFromFile("path_to_file.txt")) {
+    if (reading.readFromFile("TC_M_FPGA_Firmware0xC0000011.def")) {
         std::cout << "Data loaded successfully!" << std::endl;
     } else {
         std::cerr << "Failed to load data from file." << std::endl;

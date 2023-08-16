@@ -1,4 +1,5 @@
 #include "ReadingDefFilesSCT.h"
+#include <iostream>
 #include <fstream>
 #include <sstream>
 
@@ -114,7 +115,9 @@ std::string ReadingDefFilesSCT::getDescription() const {
 
 //Actual Function for Reading from .def file function
 bool ReadingDefFilesSCT::readFromFile(const std::string& filename) {
-    std::ifstream file(filename);
+    //std::ifstream file(filename);
+    std::string fullPath = "defFiles/" + filename; // Prefix directory name to filename
+    std::ifstream file(fullPath);
 
     // Check if the file opened successfully
     if (!file.is_open()) {
@@ -132,14 +135,14 @@ bool ReadingDefFilesSCT::readFromFile(const std::string& filename) {
     if (std::getline(file, line)) {
         std::istringstream ss(line);
 
-        ss >> name;
+        ss >> Name;
 
         uint8_t regAddrTmp, nBitsTmp, startBitTmp;
         ss >> std::hex >> regAddrTmp >> std::dec >> nBitsTmp >> startBitTmp >> value;
 
         int modeTmp;
         ss >> modeTmp;
-        accessMode = static_cast<AccessModeType>(modeTmp);
+        AccessMode = static_cast<AccessModeType>(modeTmp);
 
         ss >> lowerBound >> upperBound >> multiplier >> offset;
         std::getline(ss, description); // Get the rest of the line as the description
