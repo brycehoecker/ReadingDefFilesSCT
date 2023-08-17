@@ -3,17 +3,12 @@
 using namespace std;
 
 int main() {
+    
+    /*
     const int numObjects = 1000000;
 
     // Create an array of pointers to ReadingDefFilesSCT objects
     ReadingDefFilesSCT* readings[numObjects];
-    
-    ReadingDefFilesSCT reading;
-    if (reading.readFromFile("TC_M_FPGA_Firmware0xC0000011.def")) {
-        std::cout << "Data loaded successfully!" << std::endl;
-    } else {
-        std::cerr << "Failed to load data from file." << std::endl;
-    }
 
     // Create 1000000 ReadingDefFilesSCT objects using the parameterized constructor
     for (int i = 0; i < numObjects; ++i) {
@@ -30,7 +25,15 @@ int main() {
     }
     
     cout << "1000000 ReadingDefFilesSCT objects deleted successfully!" << endl;
-
+	*/
+	
+	    ReadingDefFilesSCT reading;
+    if (reading.readFromFile("TC_M_FPGA_Firmware0xC0000011.def")) {
+        std::cout << "Data loaded successfully!" << std::endl;
+    } else {
+        std::cerr << "Failed to load data from file." << std::endl;
+    }
+    
     return 0;
 }
 

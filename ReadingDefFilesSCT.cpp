@@ -113,6 +113,60 @@ std::string ReadingDefFilesSCT::getDescription() const {
     return description;
 }
 
+bool ReadingDefFilesSCT::readFromFile(const std::string& filename) {
+    std::string fullPath = "../defFiles/" + filename; // Prefix directory name to filename
+    std::ifstream file(fullPath);
+
+    // Print the constructed full path for clarity
+    std::cout << "Attempting to read file: " << fullPath << std::endl;
+
+    // Check if the file opened successfully
+    if (!file.is_open()) {
+        std::cerr << "Failed to open the file: " << fullPath << std::endl;
+        
+        // Print more detailed error based on errno
+        perror("Error reason"); // This will print a descriptive error message
+
+        return false;
+    }
+
+    std::string line;
+
+    // Skip the first two header lines
+    if (!std::getline(file, line)) {
+        std::cerr << "Failed to read first header line." << std::endl;
+        return false;
+    }
+
+    if (!std::getline(file, line)) {
+        std::cerr << "Failed to read second header line." << std::endl;
+        return false;
+    }
+
+    // Read and parse the third line containing the actual data
+    if (std::getline(file, line)) {
+        std::istringstream ss(line);
+        ss >> Name;
+
+        uint8_t regAddrTmp, nBitsTmp, startBitTmp;
+        ss >> std::hex >> regAddrTmp >> std::dec >> nBitsTmp >> startBitTmp >> value;
+
+        int modeTmp;
+        ss >> modeTmp;
+        AccessMode = static_cast<AccessModeType>(modeTmp);
+
+        ss >> lowerBound >> upperBound >> multiplier >> offset;
+        std::getline(ss, description); // Get the rest of the line as the description
+    } else {
+        std::cerr << "Failed to read data line or the file might be empty." << std::endl;
+        return false;
+    }
+
+    file.close();
+    return true;
+}
+
+/*
 //Actual Function for Reading from .def file function
 bool ReadingDefFilesSCT::readFromFile(const std::string& filename) {
     //std::ifstream file(filename);
@@ -156,4 +210,4 @@ bool ReadingDefFilesSCT::readFromFile(const std::string& filename) {
     file.close();
     return true;
 }
-
+*/
